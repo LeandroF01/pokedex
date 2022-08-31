@@ -1,10 +1,12 @@
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 
-export const Search = ({ setSearch }) => {
+export const Search = ({ setSearch, setType }) => {
   const handdleSubmit = (e) => {
     e.preventDefault();
     setSearch(e.target.search.value.trim().toLowerCase());
+    setType("All");
+    e.target.search.value = "";
   };
   return (
     <form onSubmit={handdleSubmit} className="search__input">

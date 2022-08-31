@@ -70,7 +70,7 @@ export const Pokedex = () => {
         </div>
       </section>
       <section className="search-limit">
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} setType={setType} />
         <div className="search__filter">
           <SearchType setType={setType} />
           <SelectCant setLimit={setpostsPag} />
