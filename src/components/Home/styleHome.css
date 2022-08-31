@@ -1,0 +1,185 @@
+:root {
+  --shadow-color: 300deg 10% 35%;
+  --shadow-elevation-low: -0.2px -0.2px 0.3px hsl(var(--shadow-color) / 0.29),
+    -0.3px -0.3px 0.5px -1.2px hsl(var(--shadow-color) / 0.29),
+    -0.6px -0.6px 1px -2.5px hsl(var(--shadow-color) / 0.29);
+  --shadow-elevation-medium: -0.2px -0.2px 0.3px hsl(var(--shadow-color) / 0.3),
+    -0.5px -0.5px 0.8px -0.8px hsl(var(--shadow-color) / 0.3),
+    -1.2px -1.3px 2px -1.7px hsl(var(--shadow-color) / 0.3),
+    -3px -3.2px 4.9px -2.5px hsl(var(--shadow-color) / 0.3);
+}
+
+.container__home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("./image/1046496.png");
+  background-size: cover;
+}
+.home__bienvenida {
+  width: 20em;
+  height: auto;
+  z-index: 1;
+}
+
+.tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 20em;
+  height: 5.5em;
+  box-shadow: var(--shadow-elevation-medium);
+  border-radius: 0.7em;
+  position: relative;
+  margin-bottom: 2em;
+  animation: 3s back;
+}
+@keyframes back {
+  0% {
+    transform: translateY(1em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  right: 50%;
+  margin-left: -9px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+.tooltip__text {
+  font-size: 1em;
+  font-weight: 400;
+  white-space: nowrap;
+  border-right: 0.2em solid;
+  width: 32ch;
+  animation: typing 3s steps(30), blink 0.5s infinite step-end alternate;
+  overflow: hidden;
+  color: black;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.home__animation {
+  position: absolute;
+  bottom: -20em;
+  width: 60em;
+  aspect-ratio: 1;
+  height: 60em;
+  opacity: 0.3;
+  animation: 4s pokeball infinite;
+  z-index: 1;
+}
+
+@keyframes pokeball {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+.home__form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 1em;
+  z-index: 1;
+}
+
+.home__input {
+  width: 17em;
+  height: 2.3em;
+  margin: auto;
+  outline: none;
+  border: none;
+  border-radius: 1.1em;
+  text-indent: 0.5em;
+}
+
+.home__button {
+  border: 1px solid #262122;
+  border-radius: 100%;
+  cursor: pointer;
+  width: 3em;
+  height: 3em;
+  aspect-ratio: 1;
+  margin: auto 0.3em;
+  background: linear-gradient(
+    150deg,
+    #ba0c2f 0%,
+    #ba0c2f 48%,
+    #262122 48%,
+    #262122 52%,
+    #fff 52%,
+    #fff 100%
+  );
+}
+
+.home__button:before,
+.home__button:after {
+  content: " ";
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+}
+
+.home__button:after {
+  background: #fff;
+  width: 0.9em;
+  height: 0.9em;
+  border: double 0.3em #262122;
+  left: 1em;
+  top: 1em;
+}
+
+.home__button-animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 3;
+  animation-name: shake;
+}
+
+@keyframes shake {
+  from {
+    transform: none;
+  }
+  20% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+  40% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 5deg);
+  }
+  50% {
+    transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 50deg);
+  }
+  to {
+    transform: none;
+  }
+}

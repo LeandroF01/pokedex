@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 0;
+}
+
+.pagination__link {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  margin: 0.2em;
+  aspect-ratio: 1;
+  background: white;
+  color: black;
+}
+
+.diplaynone {
+  display: none;
+}
+
+button[disabled] {
+  background: rgba(0, 0, 0, 0.129);
+  cursor: no-drop;
+}
+
+.direct_pag {
+  padding: 0.1em 0.7em;
+  border-radius: 0.2em;
+  aspect-ratio: 1;
+  border: none;
+  margin: 0.2em;
+  background: white;
+  cursor: pointer;
+}
+.active {
+  background: rgba(0, 0, 0, 0.129);
+}
+a:hover {
+  color: #ff8040;
+}
+.direct_pag:hover {
+  color: #ff8040;
+}

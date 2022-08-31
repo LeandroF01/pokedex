@@ -1,0 +1,343 @@
+:root {
+  --shadow-color: 0deg 0% 10%;
+
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+/*<-- Rotate Card -->*/
+.my-atropos {
+  width: 100%;
+  height: 100%;
+}
+.atropos {
+  position: relative;
+  display: block;
+  perspective: 1200px;
+  transform: translate3d(0, 0, 0);
+}
+
+.atropos-rotate-touch-scroll-y {
+  touch-action: pan-y;
+}
+.atropos-rotate-touch-scroll-x {
+  touch-action: pan-x;
+}
+.atropos-rotate-touch {
+  touch-action: none;
+}
+.atropos-scale,
+.atropos-rotate {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition-property: transform;
+  display: block;
+}
+.atropos-shadow {
+  position: absolute;
+  pointer-events: none;
+  transition-property: transform, opacity;
+  display: block;
+  opacity: 0;
+}
+.atropos-shadow {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.atropos-rotate {
+  position: relative;
+}
+.atropos-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
+.atropos-active {
+  z-index: 1;
+}
+/* <---->*/
+
+.card__pokemon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 20em;
+  height: 30em;
+  border-radius: 0.5em;
+  margin: 1em;
+  box-shadow: var(--shadow-elevation-medium);
+}
+.card__title {
+  text-align: center;
+  color: rgb(169, 185, 182);
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.card__info {
+  box-shadow: var(--shadow-elevation-medium);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 3em 3em 0.5em 0.5em;
+  background: rgba(17, 17, 17, 0.907);
+  color: rgb(169, 185, 182);
+}
+.card__type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.pokemon__image {
+  position: relative;
+  top: -3em;
+  width: 13em;
+  height: auto;
+  aspect-ratio: 1;
+  z-index: 1;
+  animation: 2s movepoke infinite alternate;
+}
+@keyframes movepoke {
+  0% {
+    transform: translateY(0em);
+  }
+  100% {
+    transform: translateY(-1em);
+  }
+}
+
+.card__stats {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7em 3em;
+  font-size: 0.8em;
+}
+.container__progress {
+  width: 7em;
+  margin: 0.2em;
+}
+.ant-progress-bg,
+.ant-progress-inner {
+  border-radius: 1em;
+}
+.image_pokeball {
+  position: absolute;
+  width: 15em;
+  opacity: 0.5;
+  left: 0;
+}
+
+.darkbackground {
+  background: rgb(45, 45, 73);
+  background: linear-gradient(
+    228deg,
+    rgba(45, 45, 73, 1) 0%,
+    rgba(103, 59, 110, 1) 66%
+  );
+}
+.dragonbackground {
+  background: rgb(154, 239, 255);
+  background: linear-gradient(
+    228deg,
+    rgba(154, 239, 255, 1) 0%,
+    rgba(179, 159, 230, 1) 66%
+  );
+}
+.electricbackground {
+  background: rgb(255, 206, 75);
+  background: linear-gradient(
+    228deg,
+    rgba(255, 206, 75, 1) 0%,
+    rgba(255, 230, 73, 1) 66%
+  );
+}
+.fairybackground {
+  background: rgb(231, 167, 229);
+  background: linear-gradient(
+    228deg,
+    rgba(231, 167, 229, 1) 0%,
+    rgba(252, 197, 252, 1) 66%
+  );
+}
+.fightingbackground {
+  background: rgb(199, 99, 69);
+  background: linear-gradient(
+    228deg,
+    rgba(199, 99, 69, 1) 0%,
+    rgba(93, 65, 58, 1) 66%
+  );
+}
+.firebackground {
+  background: rgb(240, 132, 41);
+  background: linear-gradient(
+    228deg,
+    rgba(240, 132, 41, 1) 0%,
+    rgba(244, 162, 87, 1) 66%
+  );
+}
+.flyingbackground {
+  background: rgb(117, 146, 218);
+  background: linear-gradient(
+    228deg,
+    rgba(117, 146, 218, 1) 0%,
+    rgba(187, 196, 238, 1) 66%
+  );
+}
+.ghostbackground {
+  background: rgb(82, 53, 129);
+  background: linear-gradient(
+    228deg,
+    rgba(82, 53, 129, 1) 0%,
+    rgba(92, 91, 144, 1) 66%
+  );
+}
+
+.grassbackground {
+  background: rgb(119, 214, 79);
+  background: linear-gradient(
+    228deg,
+    rgba(119, 214, 79, 1) 0%,
+    rgba(86, 153, 60, 1) 66%
+  );
+}
+.groundbackground {
+  background: rgb(135, 71, 28);
+  background: linear-gradient(
+    228deg,
+    rgba(135, 71, 28, 1) 0%,
+    rgba(221, 119, 52, 1) 66%
+  );
+}
+.icebackground {
+  background: rgb(154, 239, 255);
+  background: linear-gradient(
+    228deg,
+    rgba(154, 239, 255, 1) 0%,
+    rgba(233, 251, 251, 1) 66%
+  );
+}
+.normalbackground {
+  background: rgb(184, 182, 177);
+  background: linear-gradient(
+    228deg,
+    rgba(184, 182, 177, 1) 0%,
+    rgba(227, 226, 222, 1) 66%
+  );
+}
+.poisonbackground {
+  background: rgb(124, 82, 140);
+  background: linear-gradient(
+    228deg,
+    rgba(124, 82, 140, 1) 0%,
+    rgba(224, 146, 255, 1) 66%
+  );
+}
+.psychicbackground {
+  background: rgb(196, 76, 138);
+  background: linear-gradient(
+    228deg,
+    rgba(196, 76, 138, 1) 0%,
+    rgb(234, 136, 163) 66%
+  );
+}
+.rockbackground {
+  background: rgb(159, 133, 59);
+  background: linear-gradient(
+    228deg,
+    rgba(159, 133, 59, 1) 0%,
+    rgba(206, 181, 119, 1) 66%
+  );
+}
+.steelbackground {
+  background: rgb(169, 167, 183);
+  background: linear-gradient(
+    228deg,
+    rgba(169, 167, 183, 1) 0%,
+    rgba(204, 201, 221, 1) 66%
+  );
+}
+.waterbackground {
+  background: rgb(64, 172, 213);
+  background: linear-gradient(
+    228deg,
+    rgba(64, 172, 213, 1) 0%,
+    rgba(35, 111, 144, 1) 66%
+  );
+}
+.bugbackground {
+  background: rgb(75, 162, 70);
+  background: linear-gradient(
+    228deg,
+    rgba(75, 162, 70, 1) 2%,
+    rgba(155, 156, 63, 1) 66%
+  );
+}
+
+ul .dark::before {
+  content: url("./image/dark.png");
+}
+ul .dragon::before {
+  content: url("./image/dragon.png");
+}
+ul .electric:before {
+  content: url("./image/electric.png");
+}
+ul .fairy:before {
+  content: url("./image/fairy.png");
+}
+ul .fighting:before {
+  content: url("./image/fighting.png");
+}
+ul .fire:before {
+  content: url("./image/fire.png");
+}
+ul .flying:before {
+  content: url("./image/flying.png");
+}
+ul .ghost:before {
+  content: url("./image/ghost.png");
+}
+
+ul .grass::before {
+  content: url("./image/grass.png");
+}
+ul .ground:before {
+  content: url("./image/ground.png");
+}
+ul .ice::before {
+  content: url("./image/ice.png");
+}
+ul .normal:before {
+  content: url("./image/normal.png");
+}
+ul .poison:before {
+  content: url("./image/poison.png");
+}
+ul .psychic:before {
+  content: url("./image/psychic.png");
+}
+ul .rock:before {
+  content: url("./image/rock.png");
+}
+ul .steel:before {
+  content: url("./image/steel.png");
+}
+ul .water:before {
+  content: url("./image/water.png");
+}
+ul .bug:before {
+  content: url("./image/bug.png");
+}
