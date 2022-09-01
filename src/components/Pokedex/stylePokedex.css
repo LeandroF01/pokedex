@@ -10,7 +10,7 @@
 .welcome__header {
   position: relative;
   top: 0;
-  width: 35em;
+  max-width: 35em;
   height: 25em;
 }
 .pokedex-trainer {
@@ -86,10 +86,38 @@
 @media (max-width: 800px) {
   .container__pokedex-image {
     width: 100%;
-    border-radius: 0;
   }
   .pokedex-image {
     width: 20em;
     left: 1em;
+  }
+}
+@media (max-width: 500px) {
+  .welcome_title {
+    top: 7.1em;
+    left: 17em;
+    max-width: 8em;
+  }
+}
+
+@media (max-width: 420px) {
+  .welcome_title {
+    top: 7.1em;
+    left: 12.5em;
+    max-width: 8em;
+  }
+}
+@media (max-width: 300px) {
+  .pokedex-image {
+    max-width: 15em;
+    left: 1em;
+  }
+  .welcome_title {
+    font-size: 0.7em;
+    left: 18em;
+    top: 16em;
+  }
+  .card__pokemon {
+    width: 250px;
   }
 }
