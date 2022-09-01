@@ -1,41 +1,16 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import React, { useState } from "react";
+import React from "react";
 import "./stylePagination.css";
 
 export const Pagination = ({
-  postsPag,
-  totalPosts,
+  handdlePrev,
+  handdleNext,
   handdlePage,
+  maxPage,
+  minPage,
+  pageNumebrs,
   currentPag,
-  setCurrentPag,
 }) => {
-  const [numberLimit, setNumberLimit] = useState(5);
-  const [maxPage, setMaxPage] = useState(5);
-  const [minPage, setMinPage] = useState(0);
-
-  const pageNumebrs = [];
-
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPag); i++) {
-    pageNumebrs.push(i);
-  }
-  const handdlePrev = () => {
-    setCurrentPag(currentPag - 1);
-
-    if ((currentPag - 1) % numberLimit === 0) {
-      setMaxPage(maxPage - numberLimit);
-      setMinPage(minPage - numberLimit);
-    }
-  };
-
-  const handdleNext = () => {
-    setCurrentPag(currentPag + 1);
-
-    if (currentPag + 1 > maxPage) {
-      setMaxPage(maxPage + numberLimit);
-      setMinPage(minPage + numberLimit);
-    }
-  };
-
   const numbersPage = pageNumebrs.map((num) => {
     if (num < maxPage + 1 && num > minPage) {
       return (

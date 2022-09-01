@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { MemoizedPokemonCard } from "./PokemonCard/PokemonCard";
 import pokedex from "./PokemonCard/image/pokedex.png";
+import header from "./PokemonCard/image/headerf.png";
+import trainer from "./PokemonCard/image/trainer.png";
 import { SelectCant } from "./Form/SelectCant";
 import "./stylePokedex.css";
 import "../Pokedex/Form/styleForm.css";
@@ -8,14 +10,10 @@ import { Search } from "./Form/Search";
 import { SearchType } from "./Form/SearchType";
 import { Pagination } from "../Pagination/Pagination";
 import { useSelector } from "react-redux";
+import { usePagination } from "../hooks/usePagination";
 
 export const Pokedex = () => {
   const [pokemons, setPokemons] = useState();
-
-  const [postsPag, setpostsPag] = useState(20);
-
-  const [currentPag, setCurrentPag] = useState(1);
-
   const [search, setSearch] = useState();
   const [type, setType] = useState("All");
 
@@ -55,18 +53,29 @@ export const Pokedex = () => {
     }
   }, [search, type]);
 
-  const lastPost = currentPag * postsPag;
-  const firstPost = lastPost - postsPag;
-  const currentPosts = pokemons?.slice(firstPost, lastPost);
-
-  const handdlePage = (pageNumebr) => setCurrentPag(pageNumebr);
+  const {
+    currentPosts,
+    setpostsPag,
+    handdlePrev,
+    handdleNext,
+    handdlePage,
+    maxPage,
+    minPage,
+    numberLimit,
+    pageNumebrs,
+    currentPag,
+  } = usePagination(pokemons);
 
   return (
     <article>
       <section>
         <div className="container__pokedex-image">
-          <img className="pokedex-image" src={pokedex} alt="" />
-          <h2 className="welcome_title">{`Welcome ${nameTrainer}, here you can find your favorite pokemon`}</h2>
+          <img className="pokedex-header" src={header} alt="" />
+          <div className="welcome__header">
+            <img className="pokedex-trainer" src={trainer} alt="" />
+            <img className="pokedex-image" src={pokedex} alt="" />
+            <h2 className="welcome_title">{`Welcome ${nameTrainer}, here you can find your favorite pokemon`}</h2>
+          </div>
         </div>
       </section>
       <section className="search-limit">
@@ -76,17 +85,21 @@ export const Pokedex = () => {
           <SelectCant setLimit={setpostsPag} />
         </div>
       </section>
-
       <section className="container__pokemon">
         {currentPosts?.map(({ url }) => (
           <MemoizedPokemonCard key={url} url={url} />
         ))}
       </section>
       <Pagination
-        postsPag={postsPag}
-        totalPosts={pokemons?.length}
+        currentPosts={currentPosts}
+        setpostsPag={setpostsPag}
+        handdlePrev={handdlePrev}
+        handdleNext={handdleNext}
         handdlePage={handdlePage}
-        setCurrentPag={setCurrentPag}
+        maxPage={maxPage}
+        minPage={minPage}
+        numberLimit={numberLimit}
+        pageNumebrs={pageNumebrs}
         currentPag={currentPag}
       />
     </article>
