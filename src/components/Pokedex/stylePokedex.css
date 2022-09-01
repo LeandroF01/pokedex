@@ -51,7 +51,7 @@
   font-size: 1.3em;
   font-weight: 900;
   color: rgb(255, 255, 255);
-  animation: 2s rot ease-in;
+  animation: 2s rot ease-out;
 }
 
 @keyframes rot {

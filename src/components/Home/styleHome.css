@@ -17,7 +17,7 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background-image: url("./image/1046496.png");
+  background-image: url("./image/1046496.jpg");
   background-size: cover;
 }
 .home__bienvenida {
@@ -67,7 +67,7 @@
   font-weight: 400;
   white-space: nowrap;
   border-right: 0.2em solid;
-  width: 32ch;
+  width: 30ch;
   animation: typing 3s steps(30), blink 0.5s infinite step-end alternate;
   overflow: hidden;
   color: black;
@@ -149,8 +149,9 @@
 
 .home__button:after {
   background: #fff;
-  width: 0.9em;
-  height: 0.9em;
+  width: 0.36em;
+  height: 0.35em;
+  aspect-ratio: 1;
   border: double 0.3em #262122;
   left: 1em;
   top: 1em;
