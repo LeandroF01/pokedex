@@ -1,16 +1,29 @@
 .container__pokedex-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  background-image: url("./PokemonCard/image/1039167.png");
-  background-size: cover;
-  border-radius: 0 10em 10em 0;
-  width: 50em;
-  height: 20em;
-  margin: 0 0 5em 0;
+  width: 100%;
+  height: 25em;
 }
+.welcome__header {
+  position: relative;
+  top: 0;
+  width: 35em;
+  height: 25em;
+}
+.pokedex-trainer {
+  position: relative;
+  width: 100%;
+  top: 7em;
+  left: -11em;
+}
+
 .pokedex-image {
   position: absolute;
-  top: 2em;
-  left: 2em;
+  top: 1em;
+  left: -12em;
   animation: 2s zoom infinite alternate;
 }
 @keyframes zoom {
@@ -21,28 +34,35 @@
     transform: scale(1.05);
   }
 }
-.welcome_title {
-  font-size: 1.1em;
+
+.pokedex-header {
   position: absolute;
-  bottom: 4em;
-  left: 1em;
-  font-weight: 700;
+  object-fit: contain;
+  top: 0%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.welcome_title {
+  position: absolute;
+  top: 9em;
+  left: 19em;
+  max-width: 10em;
+  font-size: 1.3em;
+  font-weight: 900;
   color: rgb(255, 255, 255);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.5em;
-  border-radius: 0.2em;
   animation: 2s rot ease-in;
 }
 
 @keyframes rot {
   0% {
-    transform: scale(0.2);
+    transform: scale(0.5);
   }
   40% {
-    transform: scale(0.3);
+    transform: scale(0.7);
   }
   80% {
-    transform: scale(0.5) rotate(0deg);
+    transform: scale(0.8) rotate(0deg);
   }
   100% {
     transform: scale(1) rotate(360deg);
@@ -63,12 +83,13 @@
   margin: auto;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .container__pokedex-image {
     width: 100%;
     border-radius: 0;
   }
   .pokedex-image {
     width: 20em;
+    left: 1em;
   }
 }
