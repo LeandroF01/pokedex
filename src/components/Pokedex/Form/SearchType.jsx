@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Input, Select } from "antd";
+import { useFetchType } from "../../hooks/Fetch/useFetchType";
 
-export const SearchType = ({ setType }) => {
-  const [listTypes, setListTypes] = useState();
+const SearchType = ({ setType }) => {
+  const listTypes = useFetchType();
+
   const { Option } = Select;
-
-  useEffect(() => {
-    const URL = "https://pokeapi.co/api/v2/type/";
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setListTypes(data.results))
-      .catch((err) => console.log(err));
-  }, []);
 
   const handleChange = (e) => {
     setType(e.toLowerCase());
@@ -29,3 +23,4 @@ export const SearchType = ({ setType }) => {
     </Input.Group>
   );
 };
+export default SearchType;

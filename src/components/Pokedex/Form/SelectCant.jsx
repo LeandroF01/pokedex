@@ -2,7 +2,7 @@ import { Input, Select } from "antd";
 import "antd/dist/antd.css";
 import { useCallback } from "react";
 
-export const SelectCant = ({ setLimit }) => {
+const SelectCant = ({ setLimit }) => {
   const { Option } = Select;
 
   const handleMenuClick = useCallback((value) => {
@@ -21,3 +21,4 @@ export const SelectCant = ({ setLimit }) => {
     </Input.Group>
   );
 };
+export default SelectCant;

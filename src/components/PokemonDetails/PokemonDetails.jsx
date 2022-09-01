@@ -1,42 +1,13 @@
-import {
-  BarChartOutlined,
-  DoubleLeftOutlined,
-  RadarChartOutlined,
-} from "@ant-design/icons";
-import { Tabs } from "antd";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Example } from "./Example";
-import { ProgresStats } from "./ProgresStats";
-import "./styleDetails.css";
+import { DoubleLeftOutlined } from "@ant-design/icons";
+import React from "react";
+import { Link } from "react-router-dom";
 import animation from "../Home/image/animation.webp";
+import { useFetchPokemon } from "../hooks/Fetch/useFetchPokemon";
+import { Details } from "./Details";
+import "./styleDetails.css";
 
 export const PokemonDetails = () => {
-  const { name } = useParams();
-
-  const [detatails, setDetails] = useState();
-  const [statsGrapic, setStatsGrapic] = useState(!false);
-
-  const getType = () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then((res) => res.json())
-      .then((data) => setDetails(data))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getType();
-  }, []);
-
-  const handleStats = () => {
-    setStatsGrapic(false);
-  };
-  console.log(detatails);
-
-  const { TabPane } = Tabs;
-  const onChange = (key) => {
-    console.log(key);
-  };
+  const detatails = useFetchPokemon();
 
   return (
     <section
@@ -73,59 +44,7 @@ export const PokemonDetails = () => {
               </li>
             ))}
           </ul>
-
-          <Tabs defaultActiveKey="1" onChange={onChange} centered>
-            <TabPane tab="About" key="1">
-              <section>
-                <div className="container__hw">
-                  <ul className="details__hw">
-                    <li className="hw__info">
-                      <h6 className="hw__title height">Height</h6>
-                      {detatails?.height}
-                    </li>
-                    <li className="hw__info">
-                      <h6 className="hw__title width">Weight</h6>
-                      {detatails?.weight}
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="details__abilities">
-                  <h4 className="abilities__title">Abilities</h4>
-                  <ul>
-                    {detatails?.abilities.map((abil) => (
-                      <li className="abilities__ability" key={abil.ability.url}>
-                        {abil.ability.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </section>
-            </TabPane>
-            <TabPane tab="Stats" key="2">
-              <section className="details__detatails">
-                <button onClick={handleStats} className="btn__details">
-                  {statsGrapic ? <RadarChartOutlined /> : <BarChartOutlined />}
-                </button>
-                <div className="container__detatails">
-                  {statsGrapic ? (
-                    <ProgresStats detatails={detatails} />
-                  ) : (
-                    <Example detatails={detatails} />
-                  )}
-                </div>
-              </section>
-            </TabPane>
-            <TabPane tab="Moves" key="3">
-              <section className="details__moves-container">
-                <ul className="details__move">
-                  {detatails?.moves.map((mov) => (
-                    <li className="details__move-text">{mov.move.name}</li>
-                  ))}
-                </ul>
-              </section>
-            </TabPane>
-          </Tabs>
+          <Details detatails={detatails} />
         </section>
       </article>
     </section>

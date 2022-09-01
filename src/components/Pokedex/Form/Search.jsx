@@ -1,7 +1,7 @@
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 
-export const Search = ({ setSearch, setType }) => {
+const Search = ({ setSearch, setType }) => {
   const handdleSubmit = (e) => {
     e.preventDefault();
     setSearch(e.target.search.value.trim().toLowerCase());
@@ -22,3 +22,5 @@ export const Search = ({ setSearch, setType }) => {
     </form>
   );
 };
+
+export default Search;

@@ -2,7 +2,7 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import React from "react";
 import "./stylePagination.css";
 
-export const Pagination = ({
+const Pagination = ({
   handdlePrev,
   handdleNext,
   handdlePage,
@@ -82,3 +82,5 @@ export const Pagination = ({
     </nav>
   );
 };
+
+export default Pagination;

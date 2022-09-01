@@ -65,4 +65,4 @@ const PokemonCard = ({ url }) => {
   );
 };
 
-export const MemoizedPokemonCard = React.memo(PokemonCard);
+export default React.memo(PokemonCard);
