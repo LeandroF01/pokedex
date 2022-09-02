@@ -44,6 +44,7 @@ export const usePagination = (data) => {
   return {
     currentPosts,
     setpostsPag,
+    postsPag,
     currentPag,
     handdlePrev,
     handdleNext,
