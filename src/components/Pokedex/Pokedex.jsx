@@ -13,6 +13,7 @@ export const Pokedex = () => {
   const {
     currentPosts,
     setpostsPag,
+    postsPag,
     handdlePrev,
     handdleNext,
     handdlePage,
@@ -37,8 +38,8 @@ export const Pokedex = () => {
         <section className="search-limit">
           <Search setSearch={setSearch} setType={setType} />
           <div className="search__filter">
-            <SearchType setType={setType} />
-            <SelectCant setLimit={setpostsPag} />
+            <SearchType setType={setType} setSearch={setSearch} type={type} />
+            <SelectCant setLimit={setpostsPag} limit={postsPag} />
           </div>
         </section>
 

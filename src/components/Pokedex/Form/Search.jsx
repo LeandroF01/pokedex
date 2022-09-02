@@ -8,6 +8,7 @@ const Search = ({ setSearch, setType }) => {
     setType("All");
     e.target.search.value = "";
   };
+
   return (
     <form onSubmit={handdleSubmit} className="search__input">
       <input

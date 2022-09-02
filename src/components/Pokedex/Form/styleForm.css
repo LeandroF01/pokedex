@@ -39,12 +39,10 @@
 .search__btn:hover {
   background: rgba(171, 173, 172, 0.525);
 }
-.ant-select-single {
-  width: 7em;
-  margin: 0 0.5em;
-}
 
-.ant-select-selector {
-  background: rgba(155, 149, 149, 0.366);
-  color: rgb(24, 23, 23);
+.search__filter {
+  gap: 1em;
+}
+.ant-select {
+  width: 7em;
 }
