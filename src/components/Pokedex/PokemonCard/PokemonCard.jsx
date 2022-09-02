@@ -34,7 +34,7 @@ const PokemonCard = ({ url }) => {
                 data-atropos-offset="5"
                 className="pokemon__image"
                 src={pokemon?.sprites?.other["home"]["front_default"]}
-                alt=""
+                alt={pokemon.name}
               />
               <img
                 data-atropos-offset="-5"

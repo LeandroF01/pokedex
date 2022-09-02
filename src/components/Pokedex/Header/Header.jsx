@@ -10,10 +10,10 @@ const Header = () => {
   return (
     <section>
       <div className="container__pokedex-image">
-        <img className="pokedex-header" src={header} alt="" />
+        <img className="pokedex-header" src={header} alt="header" />
         <div className="welcome__header">
-          <img className="pokedex-trainer" src={trainer} alt="" />
-          <img className="pokedex-image" src={pokedex} alt="" />
+          <img className="pokedex-trainer" src={trainer} alt="trainer" />
+          <img className="pokedex-image" src={pokedex} alt="pokedex" />
           <h2 className="welcome_title">{`Welcome ${nameTrainer}, here you can find your favorite pokemon`}</h2>
         </div>
       </div>

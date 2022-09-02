@@ -26,11 +26,10 @@ export const Home = () => {
     <section className="container__home">
       <div className="tooltip">
         <p className="tooltip__text">Ready to become a pokemon trainer?</p>
-        <span></span>
       </div>
-      <img src={animation} className="home__animation" />
+      <img src={animation} className="home__animation" alt="animation" />
 
-      <img src={imageTrainer} className="home__bienvenida" />
+      <img src={imageTrainer} className="home__bienvenida" alt="trainer" />
       <div>
         <form className="home__form" onSubmit={handdleSubmit}>
           <input

@@ -23,6 +23,7 @@
 .home__bienvenida {
   width: 20em;
   height: auto;
+  aspect-ratio: 1;
   z-index: 1;
 }
 

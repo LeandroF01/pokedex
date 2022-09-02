@@ -28,9 +28,9 @@ export const PokemonDetails = () => {
           <img
             className="details__image"
             src={detatails?.sprites.other["home"]["front_default"]}
-            alt=""
+            alt={detatails?.name}
           />
-          <img className="details__animtion" src={animation} alt="" />
+          <img className="details__animtion" src={animation} alt="animation" />
         </div>
 
         <section className="pokemon__details">
