@@ -66,3 +66,5 @@ export const Pokedex = () => {
     </Suspense>
   );
 };
+
+export const MemoizedPokedex = React.memo(Pokedex);

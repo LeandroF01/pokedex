@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Home } from "./components/Home/Home";
-import { Pokedex } from "./components/Pokedex/Pokedex";
+import { MemoizedPokedex } from "./components/Pokedex/Pokedex";
 import { PokemonDetails } from "./components/PokemonDetails/PokemonDetails";
 import { ProtectedRoutes } from "./components/PokemonRoutes/ProtectedRoutes";
 
@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route element={<ProtectedRoutes />}>
-            <Route path="/pokedex" element={<Pokedex />} />
+            <Route path="/pokedex" element={<MemoizedPokedex />} />
             <Route path="/pokedex/:name" element={<PokemonDetails />} />
           </Route>
         </Routes>
