@@ -37,6 +37,7 @@
   width: 100%;
   height: auto;
   position: relative;
+  overflow: hidden;
 }
 .details__font {
   display: flex;
@@ -94,7 +95,7 @@
     transform: rotate(-360deg);
   }
   100% {
-    transform: translateX(5em) translateY(-5em);
+    transform: translateX(1em) translateY(-1em);
   }
 }
 
@@ -246,4 +247,10 @@
 
 .ant-tabs-nav-more {
   display: none;
+}
+
+@media (max-witdh: 500px) {
+  .details__animtion {
+    width: 10em;
+  }
 }
