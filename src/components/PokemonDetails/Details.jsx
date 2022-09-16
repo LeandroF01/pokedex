@@ -5,9 +5,13 @@ import { Example } from "./Example";
 import { ProgresStats } from "./ProgresStats";
 
 export const Details = ({ detatails }) => {
-  const [statsGrapic, setStatsGrapic] = useState(!false);
+  const [statsGrapic, setStatsGrapic] = useState(false);
   const handleStats = () => {
-    setStatsGrapic(false);
+    if (statsGrapic) {
+      setStatsGrapic(false);
+    } else {
+      setStatsGrapic(true);
+    }
   };
 
   const { TabPane } = Tabs;
